@@ -1,0 +1,100 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "edeka nachhaltigkeit",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hallo",
+            "wie geht\u0027s dir",
+            "sag hallo welt",
+            "sag hallo"
+          ]
+        },
+        {
+          "name": "ShoppingWeather",
+          "slots": [
+            {
+              "name": "city",
+              "type": "AMAZON.AT_REGION",
+              "samples": [
+                "Nach Herford",
+                "In Enger"
+              ]
+            }
+          ],
+          "samples": [
+            "ob ich mit dem fahrrad einkaufen kann",
+            "ob ich einkaufen gehen kann",
+            "ob es auf dem weg zum einkaufen regnet",
+            "ob einkaufswetter ist"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ShoppingWeather",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "city",
+              "type": "AMAZON.AT_REGION",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.189311150906.779114329123"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.189311150906.779114329123",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Wo solls hingehen?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Wo möchtest du einkaufen gehen?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Wo soll ich suchen?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "7"
+}
